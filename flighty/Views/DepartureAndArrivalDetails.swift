@@ -14,8 +14,6 @@ struct DepartureAndArrivalDetails: View {
     @State private var departureIcon: CGFloat = 0
     @State private var arrivalIcon: CGFloat = 0
 
-    // What is the distance between the two
-
     var body: some View {
         HStack(alignment: .top) {
             // Departure/Arrival Arrows
@@ -109,7 +107,7 @@ struct DepartureAndArrivalDetails: View {
                             .foregroundStyle(.green)
                     }
                     HStack {
-                        Text("Hartsfield Jackson Atlanta Intl")
+                        Text("Chicago O'Hare Intl")
                             .font(.caption.weight(.regular))
                         Spacer()
                         Text("Scheduled")
