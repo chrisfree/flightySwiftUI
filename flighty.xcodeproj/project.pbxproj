@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		835E2D6E2BD5D6D500064605 /* DepartureAndArrivalDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E2D6D2BD5D6D500064605 /* DepartureAndArrivalDetails.swift */; };
 		83D0D38A2BC969C500D0D6AB /* flightyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0D3892BC969C500D0D6AB /* flightyApp.swift */; };
 		83D0D38C2BC969C500D0D6AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0D38B2BC969C500D0D6AB /* ContentView.swift */; };
 		83D0D38E2BC969C600D0D6AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D0D38D2BC969C600D0D6AB /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		835E2D6D2BD5D6D500064605 /* DepartureAndArrivalDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureAndArrivalDetails.swift; sourceTree = "<group>"; };
 		83D0D3862BC969C500D0D6AB /* flighty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flighty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D0D3892BC969C500D0D6AB /* flightyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flightyApp.swift; sourceTree = "<group>"; };
 		83D0D38B2BC969C500D0D6AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		835E2D6C2BD5D6C100064605 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				835E2D6D2BD5D6D500064605 /* DepartureAndArrivalDetails.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		83D0D37D2BC969C500D0D6AB = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +61,7 @@
 		83D0D3882BC969C500D0D6AB /* flighty */ = {
 			isa = PBXGroup;
 			children = (
+				835E2D6C2BD5D6C100064605 /* Views */,
 				83D0D3892BC969C500D0D6AB /* flightyApp.swift */,
 				83D0D38B2BC969C500D0D6AB /* ContentView.swift */,
 				83D0D38D2BC969C600D0D6AB /* Assets.xcassets */,
@@ -139,6 +150,7 @@
 			files = (
 				83D0D38C2BC969C500D0D6AB /* ContentView.swift in Sources */,
 				83D0D38A2BC969C500D0D6AB /* flightyApp.swift in Sources */,
+				835E2D6E2BD5D6D500064605 /* DepartureAndArrivalDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
