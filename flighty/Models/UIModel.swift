@@ -9,5 +9,5 @@ import SwiftUI
 
 // Simple model for synchronizing the state of the UI across the app.
 class UIModel: ObservableObject {
-    @Published var selectedDetent: PresentationDetent = .medium
+    @Published var selectedDetent: PresentationDetent = .fraction(0.95)
 }
