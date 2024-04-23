@@ -15,7 +15,7 @@ struct FlightDetails: View {
 
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 15, pinnedViews: [.sectionHeaders]) {
+            LazyVStack(spacing: 20, pinnedViews: [.sectionHeaders]) {
                 // Scrolling horizontal sub-actions.
                 Section {
                     HorizontalActions()
@@ -23,6 +23,11 @@ struct FlightDetails: View {
                     GateDepartureBanner()
 
                     DepartureAndArrivalDetails()
+
+                    BookingAndSeatDetails()
+
+                    GoodToKnowSection()
+
                 } header: {
                     flightDetailsHeader
                 }
@@ -30,13 +35,15 @@ struct FlightDetails: View {
             .background(
                 GeometryReader { proxy in
                     Color.clear.preference(key: ViewOffsetKey.self, value: -proxy.frame(in: .named("container")).origin.y)
-            }).onPreferenceChange(ViewOffsetKey.self) { currentOffset in
+            })
+            .onPreferenceChange(ViewOffsetKey.self) { currentOffset in
                 let offsetDifference: CGFloat = self.previousScrollOffset - currentOffset
                 if (abs(offsetDifference) > minimumOffset) {
                     self.previousScrollOffset = currentOffset
                 }
             }
         }
+        .scrollIndicators(.hidden)
         .coordinateSpace(name: "container")
     }
 

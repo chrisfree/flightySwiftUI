@@ -69,7 +69,6 @@ struct GoodToKnowSection: View {
         .padding(.horizontal, 15)
     }
 }
-
 #Preview {
     GoodToKnowSection()
 }

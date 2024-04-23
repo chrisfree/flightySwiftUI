@@ -10,7 +10,6 @@ import MapKit
 
 struct ContentView: View {
     @StateObject var uiModel = UIModel()
-    @State private var selectedDetent: PresentationDetent = .medium
     @State private var sheetPresented: Bool = true
     @State private var referenceOpacity = 0.0
 
@@ -38,8 +37,9 @@ struct ContentView: View {
             .ignoresSafeArea()
             .sheet(isPresented: $sheetPresented) {
                 FlightDetails(sheetPresented: $sheetPresented)
-                    .presentationDetents([.height(200), .medium, .large], selection: $uiModel.selectedDetent)
+                    .presentationDetents([.height(200), .medium, .fraction(0.95)], selection: $uiModel.selectedDetent)
                     .presentationDragIndicator(.hidden)
+                    .presentationCornerRadius(21)
                     .interactiveDismissDisabled()
             }
 

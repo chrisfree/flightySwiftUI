@@ -146,6 +146,7 @@ struct DepartureAndArrivalDetails: View {
 //        }
         .padding(.leading, 10)
         .padding(.trailing)
+        .padding(.bottom, 20)
     }
 }
 

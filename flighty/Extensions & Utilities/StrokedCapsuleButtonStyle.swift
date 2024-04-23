@@ -13,7 +13,7 @@ struct StrokedCapsule: ButtonStyle {
         configuration.label
             .padding(.vertical, 10)
             .padding(.horizontal, 15)
-            .foregroundStyle(.white)
+            .foregroundStyle(.primary)
             .background(
                 Capsule()
                     .stroke(.tertiary, lineWidth: 1)

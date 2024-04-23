@@ -29,7 +29,6 @@ struct HorizontalActions: View {
                 }
                 .fontDesign(.rounded)
                 .fontWeight(.regular)
-                .tint(.white)
                 .buttonStyle(StrokedCapsule())
                 .buttonBorderShape(.capsule)
 
@@ -39,7 +38,6 @@ struct HorizontalActions: View {
                 }
                 .fontDesign(.rounded)
                 .fontWeight(.regular)
-                .tint(.white)
                 .buttonStyle(StrokedCapsule())
                 .buttonBorderShape(.capsule)
 
@@ -49,7 +47,6 @@ struct HorizontalActions: View {
                 }
                 .fontDesign(.rounded)
                 .fontWeight(.regular)
-                .tint(.white)
                 .buttonStyle(StrokedCapsule())
                 .buttonBorderShape(.capsule)
 
@@ -58,7 +55,6 @@ struct HorizontalActions: View {
                 }
                 .fontDesign(.rounded)
                 .fontWeight(.regular)
-                .tint(.white)
                 .buttonStyle(StrokedCapsule())
                 .buttonBorderShape(.capsule)
             }
