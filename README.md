@@ -4,5 +4,4 @@ This repo is a SwiftUI playground for recreating bits of the lovely (and Apple-D
 
 All code is written with the utmost respect for the Flighty crew's amazing work.
 
-https://github.com/chrisfree/flightySwiftUI/assets/604059/0a40ab5f-cf29-4d43-8444-531efc1d93af
-
+https://github.com/chrisfree/flightySwiftUI/assets/604059/719da752-2299-4d88-a060-f021ad6c5b13
