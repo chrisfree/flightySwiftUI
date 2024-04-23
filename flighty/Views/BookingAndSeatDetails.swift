@@ -30,7 +30,7 @@ struct BookingAndSeatDetails: View {
             .padding()
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(.tertiary, lineWidth: 1)
+                    .stroke(.border, lineWidth: 1)
             }
 
             VStack(alignment: .leading) {
@@ -47,7 +47,7 @@ struct BookingAndSeatDetails: View {
             .padding()
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(.tertiary, lineWidth: 1)
+                    .stroke(.border, lineWidth: 1)
             }
         }
         .padding(.horizontal, 15)

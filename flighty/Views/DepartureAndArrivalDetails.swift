@@ -19,10 +19,19 @@ struct DepartureAndArrivalDetails: View {
             // Departure/Arrival Arrows
             ZStack {
                 Image(systemName: "arrow.up.right.circle.fill")
-                    .foregroundStyle(.green)
+                    .foregroundStyle(.background, .green)
+                    .background(
+                        Circle()
+                            .fill(.background)
+                    )
                     .offset(y: departurePosition - 10)
+
                 Image(systemName: "arrow.down.right.circle.fill")
-                    .foregroundStyle(.green)
+                    .foregroundStyle(.background, .green)
+                    .background(
+                        Circle()
+                            .fill(.background)
+                    )
                     .offset(y: arrivalPosition - 10)
             }
             .fontWeight(.bold)
@@ -36,6 +45,7 @@ struct DepartureAndArrivalDetails: View {
             )
 
             VStack {
+                // Departure details.
                 HStack {
                     Text("ATL")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/.weight(.bold))
@@ -58,31 +68,38 @@ struct DepartureAndArrivalDetails: View {
                         .textCase(.uppercase)
                         .foregroundStyle(.green)
                 }
-                HStack {
-                    Text("Hartsfield Jackson Atlanta Intl")
-                        .font(.caption.weight(.regular))
-                    Spacer()
-                    Text("Scheduled")
-                        .font(.caption.weight(.bold))
+
+                Group {
+                    HStack {
+                        Text("Hartsfield Jackson Atlanta Intl")
+                            .font(.caption.weight(.regular))
+                        Spacer()
+                        Text("Scheduled")
+                            .font(.caption.weight(.bold))
+                    }
+
+                    HStack {
+                        Text("Terminal 3 • Gate 4B")
+                            .font(.caption.weight(.bold))
+                        Spacer()
+                        Text("in 1h 16m")
+                            .font(.caption.weight(.regular))
+                    }
                 }
-                HStack {
-                    Text("Terminal 3 • Gate 4B")
-                        .font(.caption.weight(.bold))
-                    Spacer()
-                    Text("in 1h 16m")
-                        .font(.caption.weight(.regular))
-                }
+                .foregroundStyle(.secondary)
 
                 ZStack {
                     Rectangle().frame(height: 0.5).opacity(0.15)
                     Text("Total 2h 6m • 606 mi")
                         .font(.caption.weight(.regular))
+                        .foregroundStyle(.secondary)
                         .padding(.vertical, 10)
                         .padding(.horizontal, 3)
                         .background(.background)
                 }
 
                 VStack {
+                    // Arrival details.
                     HStack {
                         Text("ORD")
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/.weight(.bold))
@@ -106,24 +123,31 @@ struct DepartureAndArrivalDetails: View {
                             .textCase(.uppercase)
                             .foregroundStyle(.green)
                     }
-                    HStack {
-                        Text("Chicago O'Hare Intl")
+
+                    Group {
+                        HStack {
+                            Text("Chicago O'Hare Intl")
+                                .font(.caption.weight(.regular))
+                            Spacer()
+                            Text("Scheduled")
+                                .font(.caption.weight(.bold))
+                        }
+
+                        HStack {
+                            Text("Terminal 3 • Gate 4B")
+                                .font(.caption.weight(.bold))
+                            Spacer()
+                            Text("in 1h 16m")
+                                .font(.caption.weight(.regular))
+                        }
+
+                        Text("Baggage Belt: 8")
                             .font(.caption.weight(.regular))
-                        Spacer()
-                        Text("Scheduled")
-                            .font(.caption.weight(.bold))
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    HStack {
-                        Text("Terminal 3 • Gate 4B")
-                            .font(.caption.weight(.bold))
-                        Spacer()
-                        Text("in 1h 16m")
-                            .font(.caption.weight(.regular))
-                    }
-                    Text("Baggage Belt: 8")
-                        .font(.caption.weight(.regular))
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundStyle(.secondary)
                 }
+
             }
             .padding(.leading, 10)
         }
@@ -137,13 +161,6 @@ struct DepartureAndArrivalDetails: View {
             sectionHeight = value
         }
         .coordinateSpace(name: "DepartureAndArrivalDetailsSection")
-//        .overlay {
-//            Text("\(arrivalPosition)")
-//                .font(.title)
-//                .foregroundStyle(.yellow)
-//                .fontWeight(.bold)
-//                .rotationEffect(.degrees(-25.0))
-//        }
         .padding(.leading, 10)
         .padding(.trailing)
         .padding(.bottom, 20)

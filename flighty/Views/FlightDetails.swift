@@ -15,7 +15,7 @@ struct FlightDetails: View {
 
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 20, pinnedViews: [.sectionHeaders]) {
+            LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
                 // Scrolling horizontal sub-actions.
                 Section {
                     HorizontalActions()
@@ -27,7 +27,8 @@ struct FlightDetails: View {
                     BookingAndSeatDetails()
 
                     GoodToKnowSection()
-
+                        
+                    ArrivalForecast()
                 } header: {
                     flightDetailsHeader
                 }
@@ -49,12 +50,12 @@ struct FlightDetails: View {
 
     fileprivate var flightDetailsHeader: some View {
         ZStack {
-            HStack {
+            HStack(spacing: 15) {
                 Image("united-logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .background(.white)
-                    .frame(width: 50)
+                    .frame(width: 40)
                 VStack(alignment: .leading) {
                     HStack {
                         Text("DL 2534 • Fri, 12")
@@ -82,17 +83,18 @@ struct FlightDetails: View {
             }
             .buttonStyle(.plain)
         }
-        .padding(.horizontal)
-        .padding(.top, 15)
+        .padding(.horizontal, 20)
+        .padding(.top, 17)
         .padding(.bottom, 10)
         .background(Rectangle().fill(.background))
         .overlay(
             Rectangle()
                 .frame(width: nil, height: 0.5, alignment: .top)
-                .foregroundColor(.lightGrey.opacity((previousScrollOffset - minimumOffset) / Double(2.5))),
+                .foregroundColor(.lightGrey.opacity((previousScrollOffset - minimumOffset) / Double(10))),
         alignment: .bottom)
     }
 }
+
 #Preview {
     FlightDetails(sheetPresented: .constant(true))
 }

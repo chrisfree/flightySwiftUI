@@ -15,6 +15,7 @@
 		835E2D7A2BD70A6500064605 /* GateDepartureBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E2D792BD70A6500064605 /* GateDepartureBanner.swift */; };
 		835E2D7C2BD7525A00064605 /* BookingAndSeatDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E2D7B2BD7525A00064605 /* BookingAndSeatDetails.swift */; };
 		835E2D7E2BD759B800064605 /* GoodToKnowSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E2D7D2BD759B800064605 /* GoodToKnowSection.swift */; };
+		835E2D802BD84C1100064605 /* ArrivalForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E2D7F2BD84C1100064605 /* ArrivalForecast.swift */; };
 		83D0D38A2BC969C500D0D6AB /* flightyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0D3892BC969C500D0D6AB /* flightyApp.swift */; };
 		83D0D38C2BC969C500D0D6AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0D38B2BC969C500D0D6AB /* ContentView.swift */; };
 		83D0D38E2BC969C600D0D6AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D0D38D2BC969C600D0D6AB /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		835E2D792BD70A6500064605 /* GateDepartureBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateDepartureBanner.swift; sourceTree = "<group>"; };
 		835E2D7B2BD7525A00064605 /* BookingAndSeatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAndSeatDetails.swift; sourceTree = "<group>"; };
 		835E2D7D2BD759B800064605 /* GoodToKnowSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodToKnowSection.swift; sourceTree = "<group>"; };
+		835E2D7F2BD84C1100064605 /* ArrivalForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalForecast.swift; sourceTree = "<group>"; };
 		83D0D3862BC969C500D0D6AB /* flighty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flighty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D0D3892BC969C500D0D6AB /* flightyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flightyApp.swift; sourceTree = "<group>"; };
 		83D0D38B2BC969C500D0D6AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				835E2D792BD70A6500064605 /* GateDepartureBanner.swift */,
 				835E2D7B2BD7525A00064605 /* BookingAndSeatDetails.swift */,
 				835E2D7D2BD759B800064605 /* GoodToKnowSection.swift */,
+				835E2D7F2BD84C1100064605 /* ArrivalForecast.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				835E2D802BD84C1100064605 /* ArrivalForecast.swift in Sources */,
 				835E2D732BD709C600064605 /* FlightDetails.swift in Sources */,
 				83D0D38C2BC969C500D0D6AB /* ContentView.swift in Sources */,
 				83D0D38A2BC969C500D0D6AB /* flightyApp.swift in Sources */,

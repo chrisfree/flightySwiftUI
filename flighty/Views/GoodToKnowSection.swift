@@ -39,7 +39,7 @@ struct GoodToKnowSection: View {
                 .overlay(
                     Rectangle()
                         .frame(width: nil, height: 0.5, alignment: .top)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.border)
                     , alignment: .bottom)
             }
 
@@ -64,9 +64,10 @@ struct GoodToKnowSection: View {
         .padding(.horizontal, 15)
         .overlay(
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .stroke(.tertiary, lineWidth: 1)
+                .stroke(.border, lineWidth: 1)
         )
         .padding(.horizontal, 15)
+        .padding(.vertical, 10)
     }
 }
 #Preview {
