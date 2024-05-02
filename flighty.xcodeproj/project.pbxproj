@@ -99,11 +99,11 @@
 		83D0D3882BC969C500D0D6AB /* flighty */ = {
 			isa = PBXGroup;
 			children = (
+				83D0D3892BC969C500D0D6AB /* flightyApp.swift */,
+				83D0D38B2BC969C500D0D6AB /* ContentView.swift */,
 				835E2D6F2BD7092000064605 /* Models */,
 				835E2D6C2BD5D6C100064605 /* Views */,
 				835E2D742BD709F300064605 /* Extensions & Utilities */,
-				83D0D3892BC969C500D0D6AB /* flightyApp.swift */,
-				83D0D38B2BC969C500D0D6AB /* ContentView.swift */,
 				83D0D38D2BC969C600D0D6AB /* Assets.xcassets */,
 				83D0D38F2BC969C600D0D6AB /* Preview Content */,
 			);
