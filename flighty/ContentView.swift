@@ -30,7 +30,7 @@ struct ContentView: View {
                             Circle()
                                 .fill(.flightyBlue)
                                 .stroke(.white, lineWidth: 2)
-                                .frame(maxWidth: 15)
+                                .frame(height: 12)
 
                             HStack(spacing: 0) {
                                 Text(location.code)
@@ -48,16 +48,17 @@ struct ContentView: View {
                                     .padding(.leading, 3)
                                     .padding(.trailing, 4)
                                     .background(.flightyLightBlue)
-
                             }
                             .clipShape(RoundedRectangle(cornerRadius: 5.0))
                             .fixedSize()
                         }
-                        .offset(x: -4)
+                        .offset(x: -5)
                     }
 
                     MapPolyline(coordinates: flightRoute)
-                        .stroke(.blue, lineWidth: 3)
+                        .stroke(.flightyPathSecondary, lineWidth: 5)
+                    MapPolyline(coordinates: flightRoute)
+                        .stroke(.flightyPathPrimary, lineWidth: 2)
                 }
             }
             .ignoresSafeArea()
