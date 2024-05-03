@@ -10,13 +10,13 @@ import SwiftUI
 struct FlightDetails: View {
     @EnvironmentObject var uiModel: UIModel
     @State private var previousScrollOffset: CGFloat = 0
+    @State private var closeOpacity: Double = 0
     @Binding var sheetPresented: Bool
     let minimumOffset: CGFloat = 5
 
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
-                // Scrolling horizontal sub-actions.
                 Section {
                     HorizontalActions()
 
@@ -80,6 +80,7 @@ struct FlightDetails: View {
                     .opacity(0.5)
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .offset(x: 5, y: -15)
+                    .opacity(closeOpacity)
             }
             .buttonStyle(.plain)
         }
@@ -92,9 +93,20 @@ struct FlightDetails: View {
                 .frame(width: nil, height: 0.5, alignment: .top)
                 .foregroundColor(.lightGrey.opacity((previousScrollOffset - minimumOffset) / Double(10))),
         alignment: .bottom)
+        .onChange(of: uiModel.selectedDetent) {
+            withAnimation(.easeOut(duration: 0.2)) {
+                closeOpacity = uiModel.selectedDetent == .height(200) ? 0 : 1
+            }
+        }
     }
 }
 
 #Preview {
     FlightDetails(sheetPresented: .constant(true))
+}
+
+extension View {
+    func hidden(_ shouldHide: Bool) -> some View {
+        opacity(shouldHide ? 0 : 1)
+    }
 }
