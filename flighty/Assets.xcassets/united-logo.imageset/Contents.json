@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "United-Logo.png",
+      "filename" : "united.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "united 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "united 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
