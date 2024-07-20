@@ -9,11 +9,15 @@ import SwiftUI
 
 // A view that renders all of the horizontally scrollable actions within the flight detail sheet.
 struct HorizontalActions: View {
+    @Binding var sheetPath: [Route]
+    
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
                 // Live Share button
-                Button { } label: {
+                Button {
+                    sheetPath.append(Route.detailPage(.about))
+                } label: {
                     Label("Live Share", systemImage: "square.and.arrow.up")
                         .padding(.vertical, 2)
                         .padding(.horizontal, 5)
@@ -24,7 +28,9 @@ struct HorizontalActions: View {
                 .buttonBorderShape(.capsule)
 
                 // My flight.
-                Button { } label: {
+                Button {
+                    sheetPath.append(Route.detailPage(.about))
+                } label: {
                     Label("My Flight", systemImage: "person.fill")
                 }
                 .fontDesign(.rounded)
@@ -67,5 +73,5 @@ struct HorizontalActions: View {
 }
 
 #Preview {
-    HorizontalActions()
+    HorizontalActions(sheetPath: .constant([]))
 }

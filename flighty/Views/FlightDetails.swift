@@ -11,41 +11,62 @@ struct FlightDetails: View {
     @EnvironmentObject var uiModel: UIModel
     @State private var previousScrollOffset: CGFloat = 0
     @State private var closeOpacity: Double = 0
+    @State private var sheetPath: [Route] = []
     @Binding var sheetPresented: Bool
+    
     let minimumOffset: CGFloat = 5
 
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
-                Section {
-                    HorizontalActions()
-
-                    GateDepartureBanner()
-
-                    DepartureAndArrivalDetails()
-
-                    BookingAndSeatDetails()
-
-                    GoodToKnowSection()
+        NavigationStack(path: $sheetPath) {
+            ScrollView {
+                LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
+                    Section {
+                        HorizontalActions(sheetPath: $sheetPath)
                         
-                    ArrivalForecast()
-                } header: {
-                    flightDetailsHeader
+                        GateDepartureBanner()
+
+                        DepartureAndArrivalDetails()
+
+                        BookingAndSeatDetails()
+
+                        GoodToKnowSection()
+                            
+                        ArrivalForecast()
+                    } header: {
+                        flightDetailsHeader
+                    }
+                }
+                .background(
+                    GeometryReader { proxy in
+                        Color.clear.preference(key: ViewOffsetKey.self, value: -proxy.frame(in: .named("container")).origin.y)
+                })
+                .onPreferenceChange(ViewOffsetKey.self) { currentOffset in
+                    let offsetDifference: CGFloat = self.previousScrollOffset - currentOffset
+                    if (abs(offsetDifference) > minimumOffset) {
+                        self.previousScrollOffset = currentOffset
+                    }
                 }
             }
-            .background(
-                GeometryReader { proxy in
-                    Color.clear.preference(key: ViewOffsetKey.self, value: -proxy.frame(in: .named("container")).origin.y)
-            })
-            .onPreferenceChange(ViewOffsetKey.self) { currentOffset in
-                let offsetDifference: CGFloat = self.previousScrollOffset - currentOffset
-                if (abs(offsetDifference) > minimumOffset) {
-                    self.previousScrollOffset = currentOffset
+            .scrollIndicators(.hidden)
+            .coordinateSpace(name: "container")
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case let .detailPage(aboutPage):
+                    switch aboutPage {
+                    case .about:
+                        AboutView()
+                    case .faq:
+                        AboutView()
+                    case .feedback:
+                        AboutView()
+                    case .social:
+                        AboutView()
+                    }
+                default:
+                    EmptyView()
                 }
             }
         }
-        .scrollIndicators(.hidden)
-        .coordinateSpace(name: "container")
     }
 
     fileprivate var flightDetailsHeader: some View {
